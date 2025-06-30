@@ -9,6 +9,7 @@ import { MainShopComponent } from './shop/main-shop/main-shop.component';
 import { BookCatalogComponent } from './pages/book-catalog.component';
 import { NotfoundComponent } from './shared/notfound/notfound.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { BookSliderComponent } from './components/book-slider/book-slider.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/auth', pathMatch: 'full' },
@@ -26,5 +27,6 @@ export const routes: Routes = [
   },
   { path: 'shop', component: MainShopComponent },
   { path: 'wishlist', component: WishlistComponent },
-  { path: "**", component: NotfoundComponent }
-]
+  { path: 'slider', component: BookSliderComponent },
+  { path: '**', component: NotfoundComponent }
+];
