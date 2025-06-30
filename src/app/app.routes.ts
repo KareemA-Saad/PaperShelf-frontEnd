@@ -7,6 +7,8 @@ import { OtpFormComponent } from './auth/otp-form/otp-form.component';
 import { VerifyComponent } from './auth/verify/verify.component';
 import { MainShopComponent } from './shop/main-shop/main-shop.component';
 import { BookCatalogComponent } from './pages/book-catalog.component';
+import { BookSliderComponent } from './components/book-slider/book-slider.component';
+
 
 export const routes: Routes = [
     { path: '', redirectTo: '/auth', pathMatch: 'full' },
@@ -32,5 +34,10 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/book-catalog.component').then(m => m.BookCatalogComponent)
   },
+ {
+    path: 'slider',
+    component: BookSliderComponent,
+  },
+
     { path: "**", redirectTo: '/auth', pathMatch: 'full' }
 ];

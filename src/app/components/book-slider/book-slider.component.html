@@ -1,0 +1,21 @@
+<div class="auto-slider-container" *ngIf="books.length > 0">
+  <div class="auto-slider-track" [style.transform]="'translateX(-' + currentSlide * slideWidth + '%)'">
+    <div class="slide" *ngFor="let book of books">
+      <div class="book-card">
+        <div class="image-wrapper">
+          <img [src]="book.image || 'https://via.placeholder.com/300x400'" [alt]="book.title" />
+          
+          
+        </div>
+        <div class="book-info">
+          <h3 class="book-title">{{ book.title }}</h3>
+          <p class="book-author">{{ book.author }}</p>
+          <p class="book-price">${{ book.price.toFixed(2) }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="books.length === 0">No books found.</div>
+<div class="auto-slider-container" *ngIf="books.length > 0 && getMaxSlide() > 0">
